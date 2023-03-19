@@ -11,20 +11,25 @@ export function Sidebar(props: {
 }) {
 
   const generalMenus = [
-    { name: "홈", path: "/travel/main" },
-
+    { name: "이해선이뭐에요", path: "/" },
+  ];
+  const projectMenus = [
+    { name: "이거 엔딩보기 쉽지않을껄?", path: "/travel/main" },
   ];
 
 
 
-  const getMenus = () => {
+  const getGeneralMenus = () => {
     return generalMenus
+  }
+
+  const getProjectMenus = () => {
+    return projectMenus
   }
 
 
   const closeMenu = () => {
     props.setIsOpen(false)
-
   }
 
 
@@ -40,8 +45,8 @@ export function Sidebar(props: {
       }} />
       <div>
 
-        <div style={{ color: "#F7931E" }}>
-          홈 이름
+        <div style={{ color: "black" }}>
+          Haesummy
         </div>
 
       </div>
@@ -54,7 +59,7 @@ export function Sidebar(props: {
         textAlign: 'start',
         flex: 1
       }}>
-        {getMenus().map((menu, index) => {
+        {getGeneralMenus().map((menu, index) => {
           return (
             <Link
               to={menu.path} key={index}
@@ -67,6 +72,26 @@ export function Sidebar(props: {
             </Link>
           );
         })}
+        <Divider style={{ margin: 0 }} />
+        <h3 style={{ margin: 0, color: "pink" }}>
+          Project
+        </h3>
+        {getProjectMenus().map((menu, index) => {
+          return (
+            <Link
+              to={menu.path} key={index}
+              style={{ textDecoration: "none" }}>
+              <div onClick={closeMenu}>
+                <SidebarItem
+                  menu={menu}
+                />
+              </div>
+            </Link>
+          );
+        })}
+        <div style={{ padding: "8px" }} onClick={() => { window.open("https://takingprize.com") }}>
+          킹받는 어워즈, 킹받즈
+        </div>
       </div>
     </div>
   );

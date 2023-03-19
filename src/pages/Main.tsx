@@ -1,18 +1,20 @@
 import styled from "styled-components";
+import { Button } from 'antd'
+import { useNavigate } from "react-router-dom";
+import { Footer } from "../components/layouts/Footer";
 
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color : yellow;
-  max-width: 480px;
-`
+
 export function Main() {
+  const navigate = useNavigate();
   return (
     <div>
-      <Container>
-        <h1>메인 페이지</h1>
-      </Container>
+      <h3>파리로 여행을 떠나볼까?</h3>
+      <div>
+        <img src="/img/sample.png" alt="" width={"80%"} style={{ margin: "24px" }} />
+        <Button onClick={() => { navigate('/travel/test') }}>시작하기</Button>
+      </div>
+      <Footer />
     </div>
   )
 }

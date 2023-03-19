@@ -7,6 +7,7 @@
   color: black;
   font-weight: 600;
   overflow: scroll;
+  background-color: rgba(119, 119, 119, 0.155);
 }
 
 .App-logo {

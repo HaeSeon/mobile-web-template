@@ -7,14 +7,17 @@ import { Header } from './components/layouts/Header';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color : yellow;
+  background-color : white;
   max-width: 480px;
   min-width: 340px;
   width: 100%;
 `
 
 const ContentContainer = styled.div`
-  flex: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  min-height:100vh;
 `
 
 function App() {
