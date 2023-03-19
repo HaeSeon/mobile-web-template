@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <Header />
+        <Header title="haesummy" />
         <ContentContainer>
           <Router />
         </ContentContainer>

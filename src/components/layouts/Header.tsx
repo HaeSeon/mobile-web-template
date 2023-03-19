@@ -7,19 +7,19 @@ import { useEffect } from "react";
 const Container = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;  
   align-items: center;
   height: 48px;
   background-color : pink;
 `
 
-export function Header() {
+export function Header(props: { title: string }) {
   const { visible, toggleVisible } = useVisibleToggle()
   return (
     <Container>
-
+      <h3 style={{ marginLeft: "auto", marginRight: "-32px" }}>{props.title}</h3>
       <MenuOutlined
-        style={{ margin: "8px", fontSize: "24px " }}
+        style={{ fontSize: "24px ", marginLeft: "auto", marginRight: "8px" }}
         onClick={toggleVisible} />
       <Sidebar
         isOpen={visible}
